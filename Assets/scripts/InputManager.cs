@@ -77,7 +77,9 @@ public class InputManager : MonoBehaviour
 					draggedObject = hit.transform.gameObject;
 					draggedObjectRigidbody = draggedObject.GetComponent<Rigidbody2D> ();
 					touchOffset = (Vector2)hit.transform.position - rawInputPosition;
-					draggedObject.transform.localScale = new Vector3(1.2f,1.2f,1.2f);
+					draggedObject.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, .5f);
+					draggedObjectRigidbody.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, .5f);
+					//draggedObject.transform.localScale = new Vector3(1.2f,1.2f,1.2f);
 				}
 			}
 		}
@@ -96,7 +98,8 @@ public class InputManager : MonoBehaviour
 	{
 		draggingItem = false;
 		draggedObjectRigidbody.velocity = Vector2.zero;
-		draggedObject.transform.localScale = new Vector3(1.1f,1.1f,1.1f);
+		draggedObject.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 1f);
+		//draggedObject.transform.localScale = new Vector3(1.1f,1.1f,1.1f);
 //        draggedObject.transform.position = new Vector3(Mathf.Round(draggedObject.transform.position.x), Mathf.Round(transform.position.y), (draggedObject.transform.position.z));
     }
 }
