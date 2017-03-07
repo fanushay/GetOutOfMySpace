@@ -64,6 +64,7 @@
      <Compile Include="Assets\scripts\helpbuttonscript.cs" />
      <Compile Include="Assets\scripts\homebuttonscript.cs" />
      <Compile Include="Assets\scripts\levelbuttonscript.cs" />
+     <Compile Include="Assets\scripts\loadlevel1.cs" />
      <Compile Include="Assets\scripts\loadlevel2.cs" />
      <Compile Include="Assets\scripts\loadlevel3.cs" />
      <Compile Include="Assets\scripts\loadlevel4.cs" />
