@@ -9,6 +9,8 @@ public class GameManagerScript : MonoBehaviour
 	public List<IntrovertScript> happyIntroverts = new List<IntrovertScript>();
 	public List<IntrovertScript> unhappyIntroverts = new List<IntrovertScript>();
 	public GameObject youWin;
+	public GameObject Next;
+	public GameObject Quit1;
 	bool ableToWin = false;
 
 
@@ -118,7 +120,8 @@ public class GameManagerScript : MonoBehaviour
 				if (happyIntroverts.Count == introverts.Count && happyExtroverts.Count == extroverts.Count) {
 					Debug.Log ("You win");
 					youWin.SetActive (true);
-
+					Next.SetActive(true);
+					Quit1.SetActive(true);
 				}
 
 			}
@@ -143,6 +146,8 @@ public class GameManagerScript : MonoBehaviour
 				if (happyIntroverts.Count == introverts.Count &&  happyExtroverts.Count == extroverts.Count) {
 //					Debug.Log ("You win");
 					youWin.SetActive(true);
+					Next.SetActive(true);
+					Quit1.SetActive(true);
 
 				}
 
