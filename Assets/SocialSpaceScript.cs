@@ -14,12 +14,15 @@ public class SocialSpaceScript : MonoBehaviour
 
 	public bool amIHappy;
 
-	
+	public float changeSpeed = 10.0f;
+	public float changeTime = 0.25f;
+	SpriteRenderer mySpriteRenderer;
+	int currentState = 2;
 
     void ChangeColor(Color newColor)
     {
-        SpriteRenderer socRender = GetComponent<SpriteRenderer>();
-        socRender.color = newColor;
+        //SpriteRenderer socRender = GetComponent<SpriteRenderer>();
+        //socRender.color = newColor;
     }
 	
 		
@@ -27,7 +30,7 @@ public class SocialSpaceScript : MonoBehaviour
     {
 		//if (collision.collider.tag=="social") {
 			numBreach++;
-        	Debug.Log(numBreach);
+        	//Debug.Log(numBreach);
 
 
         	if (numBreach > 3)
@@ -41,11 +44,13 @@ public class SocialSpaceScript : MonoBehaviour
 		if (shouldIBeHappy) {
 			ChangeColor (comfyColor);
 			amIHappy = true;
+			HappyAnimation ();
 
 		} else {
-			Debug.Log("Too Many In Social Space!");
+			//Debug.Log("Too Many In Social Space!");
 			ChangeColor(unComfyColor);
 			amIHappy = false;
+			UnhappyAnimation ();
 		}
 		myIntrovert.spaceStateChange ();
 
@@ -55,7 +60,7 @@ public class SocialSpaceScript : MonoBehaviour
     {
 		//if (collision.collider.tag=="social") {
         	numBreach--;
-        	Debug.Log(numBreach);
+        	//Debug.Log(numBreach);
 
 		if (numBreach > 3) {
 			ChangeState (false);
@@ -70,6 +75,8 @@ public class SocialSpaceScript : MonoBehaviour
 
 	void Start()
 	{
+
+		mySpriteRenderer = GetComponent<SpriteRenderer> ();
 
 		myIntrovert = GetComponentInParent<IntrovertScript> ();
 		if (numBreach > 3) {
@@ -87,12 +94,29 @@ public class SocialSpaceScript : MonoBehaviour
 
 	}
 
+	public void UnhappyAnimation() {
+		CancelInvoke ("UnhappyAnimation");
+		if (currentState != 0) {
+			currentState = 0;
+		}  else if (currentState == 0) {
+			currentState = 1;
+		}
+		Invoke ("UnhappyAnimation", changeTime);
+	}
+
+	public void HappyAnimation() {
+		CancelInvoke ("UnhappyAnimation");
+		currentState = 2;
+		mySpriteRenderer.color = comfyColor;
+	}
+
 	void Update()
 	{
-  
-
-    // Update is called once per frame
-    
-}
+		if (currentState == 0) {
+			mySpriteRenderer.color = Color.Lerp (mySpriteRenderer.color, unComfyColor, Time.deltaTime * changeSpeed);
+		}  else if (currentState == 1) {
+			mySpriteRenderer.color = Color.Lerp (mySpriteRenderer.color, comfyColor, Time.deltaTime * changeSpeed);
+		}
+	}
     
 }

@@ -15,7 +15,7 @@ public class StartMenu : MonoBehaviour {
 	}
 
 	public void StartLevel(){
-		SceneManager.LoadScene("Level1");
+		SceneManager.LoadScene("level 1");
 
 	}
 }
