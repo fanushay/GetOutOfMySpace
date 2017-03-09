@@ -1,7 +1,7 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetOutOfMySpace", "Assembly-CSharp.csproj", "{BBDD67C2-3590-96BB-CFC8-82C1FB343ED4}"
+# Visual Studio 2008
+
+Project("{F6DFDE33-1269-414B-D20D-D3509CC7C500}") = "GetOutOfMySpace", "Assembly-CSharp.csproj", "{BBDD67C2-3590-96BB-CFC8-82C1FB343ED4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

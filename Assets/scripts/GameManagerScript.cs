@@ -122,6 +122,7 @@ public class GameManagerScript : MonoBehaviour
 					youWin.SetActive (true);
 					Next.SetActive(true);
 					Quit1.SetActive(true);
+					GameObject.Find("Main Camera").GetComponent<InputManager>().enabled = false;
 				}
 
 			}
