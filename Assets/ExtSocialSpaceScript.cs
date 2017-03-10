@@ -50,7 +50,7 @@ public class ExtSocialSpaceScript : MonoBehaviour
 			Debug.Log (numBreach);
 
 
-			if (numBreach < 3 || numBreach > 5) {
+			if (numBreach < 3) {
 
 				//Debug.Log ("Too Few In Social Space!");
 				//ChangeColor (unComfyColor);
@@ -72,7 +72,7 @@ public class ExtSocialSpaceScript : MonoBehaviour
 			numBreach--;
 			Debug.Log (numBreach);
 
-			if (numBreach < 3 || numBreach > 5) {
+			if (numBreach < 3) {
 
 				Debug.Log ("Too Few In Social Space!");
 		
