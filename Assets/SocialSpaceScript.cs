@@ -28,15 +28,18 @@ public class SocialSpaceScript : MonoBehaviour
 		
     void OnTriggerEnter2D(Collider2D collision)
     {
-		//if (collision.collider.tag=="social") {
+
+		RaycastHit2D myRaycast = Physics2D.Linecast (transform.position, collision.transform.position, myIntrovert.backgroundLayerMask);
+		if (myRaycast.collider == null) {
+			//if (collision.collider.tag=="social") {
 			numBreach++;
-        	//Debug.Log(numBreach);
+			//Debug.Log(numBreach);
 
 
-        	if (numBreach > 3)
-        	{
-			ChangeState (false);
-        }
+			if (numBreach > 3) {
+				ChangeState (false);
+			}
+		}
     }
 	//}
 
@@ -57,16 +60,18 @@ public class SocialSpaceScript : MonoBehaviour
 	}
 
     void OnTriggerExit2D(Collider2D collision)
-    {
-		//if (collision.collider.tag=="social") {
-        	numBreach--;
-        	//Debug.Log(numBreach);
+	{
+		RaycastHit2D myRaycast = Physics2D.Linecast (transform.position, collision.transform.position, myIntrovert.backgroundLayerMask);
+		if (myRaycast.collider == null) {
+			//if (collision.collider.tag=="social") {
+			numBreach--;
+			//Debug.Log(numBreach);
 
-		if (numBreach > 3) {
-			ChangeState (false);
-		} 
-		else {
-			ChangeState (true);
+			if (numBreach > 3) {
+				ChangeState (false);
+			} else {
+				ChangeState (true);
+			}
 		}
     }
 	//}

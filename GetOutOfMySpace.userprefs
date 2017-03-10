@@ -1,10 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/levelbuttonscript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ExtSocialSpaceScript.cs">
     <Files>
-      <File FileName="Assets/scripts/loadlevel7.cs" Line="7" Column="1" />
-      <File FileName="Assets/scripts/GameManagerScript.cs" Line="124" Column="28" />
-      <File FileName="Assets/scripts/levelbuttonscript.cs" Line="17" Column="4" />
+      <File FileName="Assets/scripts/ExtrovertScript.cs" Line="10" Column="41" />
+      <File FileName="Assets/scripts/GameManagerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/loadlevel6.cs" Line="1" Column="1" />
+      <File FileName="Assets/ExtSocialSpaceScript.cs" Line="69" Column="141" />
+      <File FileName="Assets/ExtPersonalSpaceScript.cs" Line="52" Column="177" />
+      <File FileName="Assets/PersonalSpaceScript.cs" Line="45" Column="24" />
+      <File FileName="Assets/SocialSpaceScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/InputManager.cs" Line="8" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

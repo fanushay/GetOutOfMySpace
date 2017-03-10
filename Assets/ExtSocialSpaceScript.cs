@@ -19,7 +19,6 @@ public class ExtSocialSpaceScript : MonoBehaviour
 	SpriteRenderer mySpriteRenderer;
 	int currentState = 2;
 
-
     void ChangeColor(Color newColor)
     {
        // SpriteRenderer socRender = GetComponent<SpriteRenderer>();
@@ -44,35 +43,41 @@ public class ExtSocialSpaceScript : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		//if (collision.collider.tag=="social") {
-		numBreach++;
-		Debug.Log(numBreach);
+		RaycastHit2D myRaycast = Physics2D.Linecast (transform.position, collision.transform.position, myExtrovert.backgroundLayerMask);
+		if (myRaycast.collider == null) {
+			//if (collision.collider.tag=="social") {
+			numBreach++;
+			Debug.Log (numBreach);
 
 
-		if (numBreach < 3) {
+			if (numBreach < 3 || numBreach > 5) {
 
-			//Debug.Log ("Too Few In Social Space!");
-			//ChangeColor (unComfyColor);
-			//amIHappy = false;
-			ChangeState (false);
-		} else {
+				//Debug.Log ("Too Few In Social Space!");
+				//ChangeColor (unComfyColor);
+				//amIHappy = false;
+				ChangeState (false);
+			} else {
 			
-			ChangeState (true);
+				ChangeState (true);
+			}
 		}
 	}
 	//}
 
 	void OnTriggerExit2D(Collider2D collision)
 	{
-		//if (collision.collider.tag=="social") {
-		numBreach--;
-		Debug.Log(numBreach);
+		RaycastHit2D myRaycast = Physics2D.Linecast (transform.position, collision.transform.position, myExtrovert.backgroundLayerMask);
+		if (myRaycast.collider == null) {
+			//if (collision.collider.tag=="social") {
+			numBreach--;
+			Debug.Log (numBreach);
 
-		if (numBreach < 3) {
+			if (numBreach < 3 || numBreach > 5) {
 
-			Debug.Log ("Too Few In Social Space!");
+				Debug.Log ("Too Few In Social Space!");
 		
-			ChangeState (false);
+				ChangeState (false);
+			}
 		}
 	}
 	//}

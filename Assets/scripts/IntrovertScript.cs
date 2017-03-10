@@ -9,6 +9,8 @@ public class IntrovertScript : MonoBehaviour {
 	public PersonalSpaceScript myPersonalSpace;
 	public GameManagerScript myGameManager;
 
+	public LayerMask backgroundLayerMask;
+
 	void Update() {
 		
 	}

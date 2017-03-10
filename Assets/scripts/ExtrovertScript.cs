@@ -9,6 +9,8 @@ public class ExtrovertScript : MonoBehaviour {
 	public ExtPersonalSpaceScript myExtPersonalSpace;
 	public GameManagerScript myGameManager;
 
+	public LayerMask backgroundLayerMask;
+
 	void Update() {
 
 	}

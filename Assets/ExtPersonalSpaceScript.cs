@@ -29,35 +29,42 @@ public class ExtPersonalSpaceScript : MonoBehaviour
 		
     void OnTriggerEnter2D(Collider2D collision)
     {
-        numBreach++;
-        Debug.Log(numBreach);
+		RaycastHit2D myRaycast = Physics2D.Linecast (transform.position, collision.transform.position, myExtrovert.backgroundLayerMask);
+
+		if (myRaycast.collider == null) {
+
+			numBreach++;
+			Debug.Log(numBreach);
 
 
-        if (numBreach > 4)
-        {
-			ChangeState (false);
-            //Debug.Log("Too Many In Personal Space!");
-            //ChangeColor(unComfyColor);
-			//amIHappy = false;
-        }
+			if (numBreach > 4)
+			{
+				ChangeState (false);
+				//Debug.Log("Too Many In Personal Space!");
+				//ChangeColor(unComfyColor);
+				//amIHappy = false;
+			}
+		}
     }
 
 
     void OnTriggerExit2D(Collider2D collision)
-    {
-        numBreach--;
-        Debug.Log(numBreach);
+	{
+		RaycastHit2D myRaycast = Physics2D.Linecast (transform.position, collision.transform.position, myExtrovert.backgroundLayerMask);
+		if (myRaycast.collider == null) {
+			numBreach--;
+			Debug.Log (numBreach);
 
-		if (numBreach > 4) {
-			ChangeState (false);
-			//Debug.Log ("Too Many In Personal Space!");
-			//ChangeColor (unComfyColor);
-			//amIHappy = false;
-		} 
-		else { 
-			ChangeState (true);
-			//ChangeColor (comfyColor);
-			//amIHappy = true;
+			if (numBreach > 4) {
+				ChangeState (false);
+				//Debug.Log ("Too Many In Personal Space!");
+				//ChangeColor (unComfyColor);
+				//amIHappy = false;
+			} else { 
+				ChangeState (true);
+				//ChangeColor (comfyColor);
+				//amIHappy = true;
+			}
 		}
     }
 
