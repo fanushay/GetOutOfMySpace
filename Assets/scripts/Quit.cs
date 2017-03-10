@@ -13,6 +13,6 @@ public class Quit : MonoBehaviour {
 	}
 
 	public void QuitGame () {
-		SceneManager.LoadScene("intro");
+		SceneManager.LoadScene("new_intro");
 	}
 }

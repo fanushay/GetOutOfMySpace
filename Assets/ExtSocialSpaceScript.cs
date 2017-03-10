@@ -35,7 +35,7 @@ public class ExtSocialSpaceScript : MonoBehaviour
 		} else {
 			//Debug.Log("Too few In Social Space!");
 			//ChangeColor(unComfyColor);
-			//amIHappy = false;
+			amIHappy = false;
 			UnhappyAnimation ();
 		}
 		myExtrovert.spaceStateChange ();
