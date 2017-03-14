@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class unlocker : MonoBehaviour {
 
 	public float nextLevelLoadTime;
-    private int LevelAmount = 8;
+    private int LevelAmount = 10;
     private int CurrentLevel;
 
 	// Use this for initialization
