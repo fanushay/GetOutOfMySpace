@@ -11,10 +11,6 @@ public class ExtrovertScript : MonoBehaviour {
 
 	public LayerMask backgroundLayerMask;
 
-	void Update() {
-
-	}
-
 	public void spaceStateChange() {
 		if (myExtSocialSpace.amIHappy && myExtPersonalSpace.amIHappy) {
 			amIHappy = true;
