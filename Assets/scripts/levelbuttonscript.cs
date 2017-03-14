@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 		}
 
 	public void levelScene () {
-			SceneManager.LoadScene("levelselect");
+			SceneManager.LoadScene("new_levelSelect");
 		}
 }
 

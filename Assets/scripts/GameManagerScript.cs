@@ -12,7 +12,7 @@ public class GameManagerScript : MonoBehaviour
 	public GameObject Next;
 	public GameObject Quit1;
 	bool ableToWin = false;
-
+	public unlocker myUnlocker;
 
 	//extroverts
 	public List<ExtrovertScript> extroverts = new List<ExtrovertScript>();
@@ -22,82 +22,82 @@ public class GameManagerScript : MonoBehaviour
 
 	/*
     //Personal Space and Social Space Minimum and Maximum Values
-    [Header("Introverts")]
-    public GameObject introvertPrefab;
-    //number of Introverts
-    //public int[] NumberOfIntros;
-    public int numIntros;
-    //introveert personal space
-    public int introPersMin;
-    public int introPersMax;
-    //introvert social space
-    public int introSocMin;
-    public int introSocMax;
+	[Header("Introverts")]
+	public GameObject introvertPrefab;
+	//number of Introverts
+	//public int[] NumberOfIntros;
+	public int numIntros;
+	//introveert personal space
+	public int introPersMin;
+	public int introPersMax;
+	//introvert social space
+	public int introSocMin;
+	public int introSocMax;
 
-    [Header("Extroverts")]
-    public GameObject extrovertPrefab;
-    //number of Extroverts
-    public int numExtros;
-    //extrovert personal space
-    public int extroPersMin;
-    public int extroPersMax;
-    //extrovert social space
-    public int extroSocMin;
-    public int extroSocMax;
+	[Header("Extroverts")]
+	public GameObject extrovertPrefab;
+	//number of Extroverts
+	public int numExtros;
+	//extrovert personal space
+	public int extroPersMin;
+	public int extroPersMax;
+	//extrovert social space
+	public int extroSocMin;
+	public int extroSocMax;
 
-    [Header("Friends A")]
-    public GameObject friendAPrefab;
-    //number of Friendss
-    public int numFriendsA;
-    //friends personal space
-    public int friendAPersMin;
-    public int friendAPersMax;
-    //friends social space
-    public int friendASocMin;
-    public int friendASocMax;
+	[Header("Friends A")]
+	public GameObject friendAPrefab;
+	//number of Friendss
+	public int numFriendsA;
+	//friends personal space
+	public int friendAPersMin;
+	public int friendAPersMax;
+	//friends social space
+	public int friendASocMin;
+	public int friendASocMax;
 
-    [Header("Friends B")]
-    public GameObject friendBPrefab;
-    //number of Friendss
-    public int numFriendsB;
-    //friends personal space
-    public int friendBPersMin;
-    public int friendBPersMax;
-    //friends social space
-    public int friendBSocMin;
-    public int friendBSocMax;
+	[Header("Friends B")]
+	public GameObject friendBPrefab;
+	//number of Friendss
+	public int numFriendsB;
+	//friends personal space
+	public int friendBPersMin;
+	public int friendBPersMax;
+	//friends social space
+	public int friendBSocMin;
+	public int friendBSocMax;
 
-    [Header("Couples")]
-    public GameObject couplePrefab;
-    //number of Couples
-    public int numCouples;
-    //couples personal space
-    public int couplePersMin;
-    public int couplePersMax;
-    //couples social space
-    public int coupleSocMin;
-    public int coupleSocMax;
+	[Header("Couples")]
+	public GameObject couplePrefab;
+	//number of Couples
+	public int numCouples;
+	//couples personal space
+	public int couplePersMin;
+	public int couplePersMax;
+	//couples social space
+	public int coupleSocMin;
+	public int coupleSocMax;
 
 	*/
 
-    
-
-    
-
-    
-    
-
-    //Create Coordinates For each Character
-    
-    
 
 
-    // Use this for initialization
-    void Start()
-    {
+
+
+
+
+
+	//Create Coordinates For each Character
+
+
+
+
+	// Use this for initialization
+	void Start()
+	{
 		Invoke ("EnableWinCondition", 0.5f);
 
-    }
+	}
 
 	void EnableWinCondition() {
 		ableToWin = true;
@@ -123,6 +123,9 @@ public class GameManagerScript : MonoBehaviour
 					Next.SetActive(true);
 					Quit1.SetActive(true);
 					GameObject.Find("Main Camera").GetComponent<InputManager>().enabled = false;
+					myUnlocker = Camera.main.GetComponent<unlocker> ();
+					myUnlocker.LoadNextLevel ();
+
 				}
 
 			}
@@ -145,10 +148,11 @@ public class GameManagerScript : MonoBehaviour
 
 			if (ableToWin) {
 				if (happyIntroverts.Count == introverts.Count &&  happyExtroverts.Count == extroverts.Count) {
-//					Debug.Log ("You win");
+					//					Debug.Log ("You win");
 					youWin.SetActive(true);
 					Next.SetActive(true);
 					Quit1.SetActive(true);
+					myUnlocker.LoadNextLevel ();
 
 				}
 
